@@ -1,17 +1,24 @@
-def twoSum(a: list,target: int) -> list:
-    left, right = 0, len(a) - 1
-    while left < right:
-        sum = a[left] + a[right]
-        if sum > target:
-            right -= 1
-        elif sum < target:
-            left += 1
+def twoSum(a: list, target: int) -> list:
+    sub_count = {}
+    result = []
+    for i in range(len(a)):
+
+        if a[i] <= target:
+            sub_val = target - a[i]
         else:
-            return [left + 1, right + 1]
+            sub_val = a[i]
+        if a[i] in sub_count:
+            result = [sub_count.get(a[i]), i]
+            break
+
+        if sub_val not in sub_count:
+            sub_count[sub_val] = i
+
+    return result
 
 
 if __name__ == "__main__":
-    target = 7
-    values = list(sorted([1, 5, 6, 3, 8, 10, 9, 12]))
+    target = 9
+    values = list(sorted([1, 5, 7, 2]))
 
     print(twoSum(values, target))
