@@ -10,9 +10,7 @@ def twoSum(a: list, target: int) -> list:
         if a[i] in sub_count:
             result = [sub_count.get(a[i]), i]
             break
-
-        if sub_val not in sub_count:
-            sub_count[sub_val] = i
+        sub_count[sub_val] = i
 
     return result
 
