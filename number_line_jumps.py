@@ -1,12 +1,13 @@
 def number_line_jump(x1: int, v1: int, x2: int, v2: int) -> str:
-    possible = (x2 - x1) // v1 < v1
-    gap = (x2+v2)//v1
-    gap2 = (x2+v2)%(x1+v1)
-    print(gap2)
-    if gap > v1:
-        return "NO"
-    else:
-        return "YES"
+    jump_count = x2 -x1
+
+    for i in range(jump_count):
+        x1 = x1 + v1
+        x2 = x2 + v2
+
+        if x1 == x2:
+            return "YES"
+    return "NO"
 
 
 if __name__ == "__main__":
