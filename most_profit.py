@@ -4,8 +4,8 @@ def most_profit(inp):
     max_profit = 0
 
     # use nested loop to find most profit value
-    # root loop iterate each element
-    # child loop iterate element after current index
+    # outer loop iterate each element
+    # inner loop iterate element after current index
     # in child track the most profit by doing substraction current index in root with each element in child root
     for i in inp:
         for j in inp:
